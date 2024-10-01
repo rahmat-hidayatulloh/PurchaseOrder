@@ -2,15 +2,13 @@ package com.PurchaseOrder.PurchaseOrderApi.model.request;
 
 import com.PurchaseOrder.PurchaseOrderApi.common.base.BaseRequest;
 import jakarta.persistence.Column;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 public class ItemRequest extends BaseRequest {
     private int id;
 

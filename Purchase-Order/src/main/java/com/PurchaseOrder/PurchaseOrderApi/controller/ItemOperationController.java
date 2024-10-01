@@ -39,7 +39,7 @@ public class ItemOperationController {
     }
 
     @GetMapping("/get-item/{itemId}")
-    public ItemResponse getItemById(@PathVariable(required = false) int itemId) {
+    public ItemResponse getItemById(@PathVariable(required = true) int itemId) {
         return getItemService.execute(UniversalIdRequest
                 .builder().id(itemId).build());
     }

@@ -2,10 +2,7 @@ package com.PurchaseOrder.PurchaseOrderApi.model.response;
 
 import com.PurchaseOrder.PurchaseOrderApi.common.base.BaseResponse;
 import com.PurchaseOrder.PurchaseOrderApi.model.entity.Users;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,6 +10,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 public class UsersResponse extends BaseResponse {
     private List<Users> users;
 }

@@ -1,10 +1,7 @@
 package com.PurchaseOrder.PurchaseOrderApi.model.request;
 
 import com.PurchaseOrder.PurchaseOrderApi.common.base.BaseRequest;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -12,6 +9,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 public class PoHRequest extends BaseRequest {
     private int id;
 

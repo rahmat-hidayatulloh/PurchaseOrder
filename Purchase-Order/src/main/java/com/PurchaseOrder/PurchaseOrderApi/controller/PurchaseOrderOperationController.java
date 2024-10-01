@@ -48,7 +48,7 @@ public class PurchaseOrderOperationController {
     }
 
     @GetMapping("/get-order/{poId}")
-    public PurchaseOrderResponse getPurchaseOrderById(@PathVariable(required = false) int poId) {
+    public PurchaseOrderResponse getPurchaseOrderById(@PathVariable(required = true) int poId) {
         return getPurchaseOrderService.execute(UniversalIdRequest
                 .builder().id(poId).build());
     }

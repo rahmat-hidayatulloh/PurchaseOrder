@@ -3,10 +3,7 @@ package com.PurchaseOrder.PurchaseOrderApi.model.response;
 import com.PurchaseOrder.PurchaseOrderApi.common.base.BaseResponse;
 import com.PurchaseOrder.PurchaseOrderApi.model.entity.Item;
 import jakarta.persistence.Column;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -14,6 +11,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 public class ItemResponse extends BaseResponse {
     private List<Item> items;
 }

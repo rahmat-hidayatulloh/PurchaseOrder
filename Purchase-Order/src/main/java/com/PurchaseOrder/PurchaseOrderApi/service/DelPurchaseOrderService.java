@@ -20,7 +20,7 @@ public class DelPurchaseOrderService implements BaseService<UniversalIdRequest, 
 
     @Override
     public EmptyResponse execute(UniversalIdRequest input) {
-        poDRepository.deleteById(input.getId());
+        poHRepository.deleteById(input.getId());
         return new EmptyResponse();
     }
 }

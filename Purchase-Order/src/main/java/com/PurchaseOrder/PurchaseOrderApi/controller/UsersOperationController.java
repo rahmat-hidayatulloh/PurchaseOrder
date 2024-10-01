@@ -40,7 +40,7 @@ public class UsersOperationController {
     }
 
     @GetMapping("/get-user/{userId}")
-    public UsersResponse getPurchaseOrderById(@PathVariable(required = false) int userId) {
+    public UsersResponse getPurchaseOrderById(@PathVariable(required = true) int userId) {
         return getUserService.execute(UniversalIdRequest
                 .builder().id(userId).build());
     }

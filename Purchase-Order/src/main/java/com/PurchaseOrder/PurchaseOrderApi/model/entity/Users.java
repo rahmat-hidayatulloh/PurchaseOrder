@@ -3,10 +3,12 @@ package com.PurchaseOrder.PurchaseOrderApi.model.entity;
 import com.PurchaseOrder.PurchaseOrderApi.common.base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Entity
 @Table(name = "users")
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class Users extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

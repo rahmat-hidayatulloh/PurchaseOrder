@@ -2,11 +2,13 @@ package com.PurchaseOrder.PurchaseOrderApi.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Entity
 @Table(name = "po_d")
 @Data
-public class PoD{
+@EqualsAndHashCode(callSuper = false)
+public class PoD {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
