@@ -9,6 +9,7 @@ import com.PurchaseOrder.PurchaseOrderApi.repository.ItemRepository;
 import com.PurchaseOrder.PurchaseOrderApi.repository.PoDRepository;
 import com.PurchaseOrder.PurchaseOrderApi.repository.PoHRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PostPurchaseOrderService implements BaseService<PurchaseOrderRequest, EmptyResponse> {
@@ -28,6 +29,7 @@ public class PostPurchaseOrderService implements BaseService<PurchaseOrderReques
         return new EmptyResponse();
     }
 
+    @Transactional
     private PoD mapNewPurchaseOrder(PoD poD, PurchaseOrderRequest input) {
         poD.setItem(itemRepository.findById(input.getItemId())
                 .orElseThrow(() -> new DataNotFoundException(input.getItemId(), "Item")));

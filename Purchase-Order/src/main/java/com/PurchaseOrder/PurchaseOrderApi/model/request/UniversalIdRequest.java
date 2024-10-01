@@ -6,23 +6,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PurchaseOrderRequest extends BaseRequest {
-
+public class UniversalIdRequest extends BaseRequest {
     private int id;
-
-    private int poHId;
-
-    private int itemId;
-
-    private int itemQty;
-
-    private int itemCost;
-
-    private int itemPrice;
 }

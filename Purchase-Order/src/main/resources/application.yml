@@ -1,0 +1,23 @@
+server:
+  port: 8089
+
+springdoc:
+  api-docs:
+    path: /api-docs/purchaseorderapi
+  swagger-ui:
+    path: /swagger-ui/purchaseorderapi
+
+spring:
+  application:
+    name: purchase order
+  datasource:
+    url: jdbc:sqlserver://localhost;encrypt=true;trustServerCertificate=true;databaseName=PURCHASEORDERDB
+    username: SA
+    password: P@$$w0rd
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.SQLServerDialect
