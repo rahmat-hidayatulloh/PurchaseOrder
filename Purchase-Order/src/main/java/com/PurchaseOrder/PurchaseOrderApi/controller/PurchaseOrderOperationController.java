@@ -47,7 +47,13 @@ public class PurchaseOrderOperationController {
         return getPurchaseOrderService.execute(new UniversalIdRequest());
     }
 
-    @DeleteMapping("/delete-user")
+    @GetMapping("/get-order/{poId}")
+    public PurchaseOrderResponse getPurchaseOrderById(@PathVariable(required = false) int poId) {
+        return getPurchaseOrderService.execute(UniversalIdRequest
+                .builder().id(poId).build());
+    }
+
+    @DeleteMapping("/delete-purchase-order")
     public EmptyResponse DelPurchaseOrder(@Valid @RequestBody UniversalIdRequest request) {
         return delPurchaseOrderService.execute(request);
     }
