@@ -1,7 +1,10 @@
 package com.PurchaseOrder.PurchaseOrderApi.model.request;
 
 import com.PurchaseOrder.PurchaseOrderApi.common.base.BaseRequest;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+
+import java.util.List;
 
 @Data
 @Builder
@@ -10,15 +13,9 @@ import lombok.*;
 @EqualsAndHashCode(callSuper = false)
 public class PurchaseOrderRequest extends BaseRequest {
 
-    private int id;
+    private String description;
 
-    private int poHId;
+    @JsonProperty("PO Detail")
+    private List<PoDRequest> poDRequestList;
 
-    private int itemId;
-
-    private int itemQty;
-
-    private int itemCost;
-
-    private int itemPrice;
 }

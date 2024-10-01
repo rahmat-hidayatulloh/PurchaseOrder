@@ -21,7 +21,7 @@ public class GetPurchaseOrderService implements BaseService<UniversalIdRequest, 
     @Override
     public PurchaseOrderResponse execute(UniversalIdRequest input) {
 
-        return input == null ? getAllPurchaseOrder() : getPurchaseOrderById(input.getId());
+        return input != null && input.getId() != 0 ? getAllPurchaseOrder() : getPurchaseOrderById(input.getId());
     }
 
     private PurchaseOrderResponse getAllPurchaseOrder() {

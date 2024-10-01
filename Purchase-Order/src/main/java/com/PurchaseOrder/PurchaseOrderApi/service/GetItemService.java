@@ -20,7 +20,7 @@ public class GetItemService implements BaseService<UniversalIdRequest, ItemRespo
 
     @Override
     public ItemResponse execute(UniversalIdRequest input) {
-        return input == null ? getAllItemList() : getItemById(input.getId());
+        return input != null && input.getId() != 0 ? getItemById(input.getId())  : getAllItemList();
     }
 
     private ItemResponse getItemById(int itemId) {

@@ -21,7 +21,7 @@ public class GetUserService implements BaseService<UniversalIdRequest, UsersResp
     @Override
     public UsersResponse execute(UniversalIdRequest input) {
 
-        return input == null ? getAllUserList() : getUserById(input.getId());
+        return input != null && input.getId() != 0 ? getAllUserList() : getUserById(input.getId());
     }
 
     private UsersResponse getAllUserList() {
