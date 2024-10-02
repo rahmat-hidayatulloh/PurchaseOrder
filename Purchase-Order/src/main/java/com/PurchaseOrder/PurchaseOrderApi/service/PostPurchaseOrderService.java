@@ -2,6 +2,7 @@ package com.PurchaseOrder.PurchaseOrderApi.service;
 
 import com.PurchaseOrder.PurchaseOrderApi.common.base.BaseService;
 import com.PurchaseOrder.PurchaseOrderApi.exception.DataNotFoundException;
+import com.PurchaseOrder.PurchaseOrderApi.model.entity.Item;
 import com.PurchaseOrder.PurchaseOrderApi.model.entity.PoD;
 import com.PurchaseOrder.PurchaseOrderApi.model.entity.PoH;
 import com.PurchaseOrder.PurchaseOrderApi.model.request.PoDRequest;
@@ -31,7 +32,7 @@ public class PostPurchaseOrderService implements BaseService<PurchaseOrderReques
 
     @Override
     public EmptyResponse execute(PurchaseOrderRequest input) {
-        if (input.getId() != null) {
+        if (input.getId() != 0) {
             return updatePurchaseOrder(input);
         }
         return createPurchaseOrder(input);
@@ -52,7 +53,7 @@ public class PostPurchaseOrderService implements BaseService<PurchaseOrderReques
 
     private PoH findExistingPurchaseOrder(Integer id) {
         return poHRepository.findById(id)
-                .orElseThrow(() -> new DataNotFoundException(id, "Purchase Order tidak ditemukan"));
+                .orElseThrow(() -> new DataNotFoundException(id, "Purchase Order "));
     }
 
     private void updatePurchaseOrderDetails(PoH existingPurchaseOrder, PurchaseOrderRequest input) {
@@ -91,7 +92,7 @@ public class PostPurchaseOrderService implements BaseService<PurchaseOrderReques
 
     private Item getItemById(Integer itemId) {
         return itemRepository.findById(itemId)
-                .orElseThrow(() -> new DataNotFoundException(itemId, "Item tidak ditemukan"));
+                .orElseThrow(() -> new DataNotFoundException(itemId, "Item "));
     }
 
     private int calculateAccumulatedCost(int costPerItem, int quantity) {

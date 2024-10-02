@@ -13,6 +13,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 public class PurchaseOrderRequest extends BaseRequest {
 
+    private int id;
     private String description;
 
     @JsonProperty("PO Detail")

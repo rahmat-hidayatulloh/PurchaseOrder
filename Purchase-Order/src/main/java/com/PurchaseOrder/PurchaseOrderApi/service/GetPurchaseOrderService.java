@@ -84,6 +84,7 @@ public class GetPurchaseOrderService implements BaseService<UniversalIdRequest, 
         return PoDDto.builder()
                 .id(poD.getId())
                 .item(mapItemToDto(poD.getItem()))
+                .itemId(poD.getItem().getId())
                 .itemQty(poD.getItemQty())
                 .itemCost(poD.getItemCost())
                 .itemPrice(poD.getItemPrice())
