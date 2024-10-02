@@ -1,13 +1,11 @@
 package com.PurchaseOrder.PurchaseOrderApi.controller;
 
-import com.PurchaseOrder.PurchaseOrderApi.model.request.PoHRequest;
 import com.PurchaseOrder.PurchaseOrderApi.model.request.PurchaseOrderRequest;
 import com.PurchaseOrder.PurchaseOrderApi.model.request.UniversalIdRequest;
 import com.PurchaseOrder.PurchaseOrderApi.model.response.EmptyResponse;
 import com.PurchaseOrder.PurchaseOrderApi.model.response.PurchaseOrderResponse;
 import com.PurchaseOrder.PurchaseOrderApi.service.DelPurchaseOrderService;
 import com.PurchaseOrder.PurchaseOrderApi.service.GetPurchaseOrderService;
-import com.PurchaseOrder.PurchaseOrderApi.service.PostPoHService;
 import com.PurchaseOrder.PurchaseOrderApi.service.PostPurchaseOrderService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -16,25 +14,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/purchase-order")
 public class PurchaseOrderOperationController {
 
-    private final PostPoHService postPoHService;
     private final PostPurchaseOrderService postPurchaseOrderService;
     private final GetPurchaseOrderService getPurchaseOrderService;
     private final DelPurchaseOrderService delPurchaseOrderService;
 
-    public PurchaseOrderOperationController(
-            PostPoHService postPoHService,
-            PostPurchaseOrderService postPurchaseOrderService,
-            GetPurchaseOrderService getPurchaseOrderService,
-            DelPurchaseOrderService delPurchaseOrderService) {
-        this.postPoHService = postPoHService;
+    public PurchaseOrderOperationController(PostPurchaseOrderService postPurchaseOrderService,
+                                            GetPurchaseOrderService getPurchaseOrderService,
+                                            DelPurchaseOrderService delPurchaseOrderService) {
         this.postPurchaseOrderService = postPurchaseOrderService;
         this.getPurchaseOrderService = getPurchaseOrderService;
         this.delPurchaseOrderService = delPurchaseOrderService;
-    }
-
-    @PostMapping("/add-master-po")
-    public EmptyResponse postPOHeader(@Valid @RequestBody PoHRequest request) {
-        return postPoHService.execute(request);
     }
 
     @PostMapping("/add-purchase-order")

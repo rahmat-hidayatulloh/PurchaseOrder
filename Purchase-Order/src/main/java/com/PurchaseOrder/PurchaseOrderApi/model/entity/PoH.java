@@ -28,6 +28,6 @@ public class PoH extends BaseEntity {
     @Column(name = "total_cost")
     private int totalCost;
 
-    @OneToMany(mappedBy = "poH", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "poH", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<PoD> poDList;
 }

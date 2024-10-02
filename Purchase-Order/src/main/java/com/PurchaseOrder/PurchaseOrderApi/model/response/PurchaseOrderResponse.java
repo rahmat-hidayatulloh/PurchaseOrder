@@ -1,7 +1,9 @@
 package com.PurchaseOrder.PurchaseOrderApi.model.response;
 
 import com.PurchaseOrder.PurchaseOrderApi.common.base.BaseResponse;
-import com.PurchaseOrder.PurchaseOrderApi.model.entity.PoD;
+import com.PurchaseOrder.PurchaseOrderApi.model.dto.PoHDto;
+import com.PurchaseOrder.PurchaseOrderApi.model.entity.PoH;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import java.util.List;
@@ -13,6 +15,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 public class PurchaseOrderResponse extends BaseResponse {
 
-    private List<PoD> purchaseOrderList;
+    @JsonProperty("Purchase Order")
+    private List<PoHDto> purchaseOrderList;
 
 }

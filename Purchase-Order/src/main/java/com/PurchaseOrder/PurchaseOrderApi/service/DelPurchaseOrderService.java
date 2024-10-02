@@ -6,8 +6,10 @@ import com.PurchaseOrder.PurchaseOrderApi.model.response.EmptyResponse;
 import com.PurchaseOrder.PurchaseOrderApi.repository.PoDRepository;
 import com.PurchaseOrder.PurchaseOrderApi.repository.PoHRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class DelPurchaseOrderService implements BaseService<UniversalIdRequest, EmptyResponse> {
 
     private final PoDRepository poDRepository;
